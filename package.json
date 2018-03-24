@@ -1,0 +1,51 @@
+{
+  "name": "node-seed",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "build": "del-cli public/js/app && webpack --config webpack.config.dev.js --progress --profile --watch",
+    "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && del-cli 'assets/app/**/*.js' 'assets/app/**/*.ngsummary.json' 'assets/app/**/*.ngstyle.*'",
+    "del": "del-cli public/js/app",
+    "watch": "webpack --config webpack.config.dev.js --progress --profile --watch"
+  },
+  "dependencies": {
+    "@angular/animations": "^5.2.9",
+    "@angular/cli": "^1.7.3",
+    "@angular/common": "^5.2.9",
+    "@angular/compiler": "^5.2.9",
+    "@angular/compiler-cli": "^5.2.9",
+    "@angular/core": "^5.2.9",
+    "@angular/forms": "^5.2.9",
+    "@angular/http": "^5.2.9",
+    "@angular/platform-browser": "^5.2.9",
+    "@angular/platform-browser-dynamic": "^5.2.9",
+    "@angular/platform-server": "^5.2.9",
+    "@angular/router": "^5.2.9",
+    "@angular/upgrade": "^5.2.9",
+    "cookie-parser": "~1.4.3",
+    "core-js": "^2.5.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "rxjs": "^5.5.7",
+    "zone.js": "^0.8.20"
+  },
+  "devDependencies": {
+    "@ngtools/webpack": "^1.8.0",
+    "@types/core-js": "0.9.36",
+    "@types/node": "^6.0.45",
+    "angular-router-loader": "^0.5.0",
+    "angular2-template-loader": "^0.5.0",
+    "awesome-typescript-loader": "^3.1.2",
+    "del-cli": "^0.2.0",
+    "html-loader": "^0.4.4",
+    "raw-loader": "^0.5.1",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.1.4",
+    "webpack": "^2.2.1",
+    "webpack-merge": "^4.1.0"
+  }
+}
